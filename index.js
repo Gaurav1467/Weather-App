@@ -1,19 +1,19 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const geocode = require('./utils/geocode')
-const foreCast = require('./utils/foreCast')
+const geocode = require('./src/utils/geocode')
+const foreCast = require('./src/utils/foreCast')
 
 
 const app = express()
 // Define path to express config
-const publicDirpath = path.join(__dirname,'../public')
-const partialsPath = path.join(__dirname,'../templates/partials') 
+const publicDirpath = path.join(__dirname,'./public')
+const partialsPath = path.join(__dirname,'./templates/partials') 
 
 
 // Set handlerbars to engine to serve
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname,'../templates/views'));
+app.set('views', path.join(__dirname,'./templates/views'));
 hbs.registerPartials(partialsPath)
 
 // Set static directory to serve
